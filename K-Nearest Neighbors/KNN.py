@@ -26,11 +26,12 @@ x = list(zip(buying, maint, door, persons, lug_boot))
 y = list(cls)
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)  # test size means 90% of the data will be used to train and 10% will be used to test
 
-loopSize = 30000
-numberOfNeighborsToTry = 11
+'''
+loopSize = 45000
+numberOfNeighborsToTry = 49
 bestAccuracyThusFar = 0
 bestNumberOfNeighbors = 0
-'''
+
 for i in range(numberOfNeighborsToTry):
     i = i + 1
     if i % 2 == 1:
@@ -49,17 +50,13 @@ for i in range(numberOfNeighborsToTry):
                 print("\n\nBEST IS NOW: " + str(bestAccuracyThusFar) + "\n\n")
                 with open("cars.pickle", "wb") as file:
                     pickle.dump(model, file)
-'''
 
+'''
 pickle_in = open("cars.pickle", "rb")
 model = pickle.load(pickle_in)
 
 
-print("Best Accuracy is: ", bestAccuracyThusFar, " with ", bestNumberOfNeighbors, " neighbors")
-print("Confirm Accuracy: ", model.score(x_test, y_test))
-
-
-
+# print("Best Accuracy is: ", bestAccuracyThusFar, " with ", bestNumberOfNeighbors, " neighbors")
 
 predicted = model.predict(x_test)
 names = ["unacc", "acc", "good", "vgood"]

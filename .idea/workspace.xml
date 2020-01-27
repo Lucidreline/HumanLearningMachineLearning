@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3916162-7a12-480a-a49f-e12583632a2b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/K-Nearest Neighbors/KNN.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K-Nearest Neighbors/car.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K-Means Clustering/KM.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SVM/SVM.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/K-Nearest Neighbors/KNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/K-Nearest Neighbors/KNN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/K-Nearest Neighbors/cars.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/K-Nearest Neighbors/cars.pickle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +35,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Linear Regression" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/K-Means Clustering/KM.py" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -48,7 +49,28 @@
       <recent name="C:\Users\ma52c\Treasure\Coding\tutorials\tensorEnv\venv" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Regression">
+  <component name="RunManager" selected="Python.KM">
+    <configuration name="KM" type="PythonConfigurationType" factoryName="Python">
+      <module name="tensorEnv" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\ma52c\Anaconda3\envs\tensor\pythonw.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/K-Means Clustering" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/K-Means Clustering/KM.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="KNN" type="PythonConfigurationType" factoryName="Python">
       <module name="tensorEnv" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -91,9 +113,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="SVM" type="PythonConfigurationType" factoryName="Python">
+      <module name="tensorEnv" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\ma52c\Anaconda3\envs\tensor\pythonw.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SVM" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SVM/SVM.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.Regression" />
       <item itemvalue="Python.KNN" />
+      <item itemvalue="Python.SVM" />
+      <item itemvalue="Python.KM" />
     </list>
   </component>
   <component name="ServiceViewManager">
@@ -122,42 +167,42 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579937764350">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580105943182">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579937764350" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580105943182" />
     <state x="690" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577817813212">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1577817813212" />
-    <state x="739" y="275" key="FileChooserDialogImpl" timestamp="1579930506853">
+    <state x="739" y="275" key="FileChooserDialogImpl" timestamp="1580105941173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579930506853" />
-    <state width="1899" height="551" key="GridCell.Tab.0.bottom" timestamp="1579938002536">
+    <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1580105941173" />
+    <state width="1899" height="312" key="GridCell.Tab.0.bottom" timestamp="1580018055387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="551" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579938002536" />
-    <state width="1899" height="551" key="GridCell.Tab.0.center" timestamp="1579938002536">
+    <state width="1899" height="312" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580018055387" />
+    <state width="1899" height="312" key="GridCell.Tab.0.center" timestamp="1580018055387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="551" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579938002536" />
-    <state width="1899" height="551" key="GridCell.Tab.0.left" timestamp="1579938002536">
+    <state width="1899" height="312" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580018055387" />
+    <state width="1899" height="312" key="GridCell.Tab.0.left" timestamp="1580018055387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="551" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579938002536" />
-    <state width="1899" height="551" key="GridCell.Tab.0.right" timestamp="1579938002536">
+    <state width="1899" height="312" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580018055387" />
+    <state width="1899" height="312" key="GridCell.Tab.0.right" timestamp="1580018055387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="551" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579938002536" />
+    <state width="1899" height="312" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580018055387" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1577778191100">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1577778191100" />
-    <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1579918539196">
+    <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1580103111516">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="661" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579918539196" />
+    <state x="661" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580103111516" />
     <state x="1070" y="201" width="606" height="804" key="find.popup" timestamp="1579937529805">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
