@@ -21,10 +21,10 @@ x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y
 
 bestScoreSoFar = 0
 bestTestSize = 0
-loopLength = 5000000
-for j in range(49):
+loopLength = 10000000
+for j in range(29):
     if j == 0:
-        j = 8
+        j = 10
     j = j/100
     print(j)
     for i in range(loopLength):
@@ -36,13 +36,13 @@ for j in range(49):
         linear.fit(x_train, y_train) # finds the best fit line
         accuracyOFModel = linear.score(x_test, y_test)
 
-        if i % 10000 == 0:
-            print( "\n\nCurrent Accuracy: ",  accuracyOFModel, f'{i:,}', "/", f'{loopLength:,}', " \nwith a test size of ", j )
+        if i % 1000000 == 0:
+            print( "\n\nCurrent Accuracy: ",  accuracyOFModel, f'{i:,}', "/", f'{loopLength:,}', " \nwith a test size of " + j )
 
         if accuracyOFModel > bestScoreSoFar:
             bestTestSize = j
             bestScoreSoFar = accuracyOFModel
-            print("best is now: ", bestScoreSoFar, " with a test size of ", bestTestSize)
+            print("\nbest is now: ", bestScoreSoFar, " with a test size of ", bestTestSize)
             with open("studentModel.pickle", "wb") as file:
                 pickle.dump(linear, file) 
 
