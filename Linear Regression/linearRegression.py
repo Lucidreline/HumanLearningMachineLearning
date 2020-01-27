@@ -5,6 +5,7 @@ from sklearn import linear_model
 import matplotlib.pyplot as pyplot
 from matplotlib import style
 import pickle
+from time import sleep
 
 data = pd.read_csv("student-mat.csv", sep=";") #gets the data from the file and seperates the data using semicolons... usually its commas so you have to tell it to use ';'
 
@@ -28,6 +29,7 @@ for j in range(29):
     j = j/100
     print(j)
     for i in range(loopLength):
+        sleep(0.1)
         # we are going to split these up into 4 different arrays
         x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=j) # test size means 90% of the data will be used to train and 10% will be used to test
 
