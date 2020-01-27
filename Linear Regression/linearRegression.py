@@ -18,25 +18,35 @@ y = np.array(data[predict]) # an array of only the label we want to find
 
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)  # test size means 90% of the data will be used to train and 10% will be used to test
 
-'''
+
 bestScoreSoFar = 0
-loopLength = 2000000
-for i in range(loopLength):
-    # we are going to split these up into 4 different arrays
-    x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1) # test size means 90% of the data will be used to train and 10% will be used to test
+bestTestSize = 0
+loopLength = 5000000
+for j in range(49):
+    if j == 0:
+        j = 8
+    j = j/100
+    print(j)
+    for i in range(loopLength):
+        # we are going to split these up into 4 different arrays
+        x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=j) # test size means 90% of the data will be used to train and 10% will be used to test
 
-    linear = linear_model.LinearRegression() # allows us to use linear regression
+        linear = linear_model.LinearRegression() # allows us to use linear regression
 
-    linear.fit(x_train, y_train) # finds the best fit line
-    accuracyOFModel = linear.score(x_test, y_test)
+        linear.fit(x_train, y_train) # finds the best fit line
+        accuracyOFModel = linear.score(x_test, y_test)
 
-    print( "Current Accuracy: ",  accuracyOFModel, "   " , f'{i:,}', "/", f'{loopLength:,}')
+        if i % 10000 == 0:
+            print( "\n\nCurrent Accuracy: ",  accuracyOFModel, f'{i:,}', "/", f'{loopLength:,}', " \nwith a test size of ", j )
 
-    if accuracyOFModel > bestScoreSoFar:
-        bestScoreSoFar = accuracyOFModel
-        print("best is now: ", bestScoreSoFar)
-        with open("studentModel.pickle", "wb") as file:
-            pickle.dump(linear, file) '''
+        if accuracyOFModel > bestScoreSoFar:
+            bestTestSize = j
+            bestScoreSoFar = accuracyOFModel
+            print("best is now: ", bestScoreSoFar, " with a test size of ", bestTestSize)
+            with open("studentModel.pickle", "wb") as file:
+                pickle.dump(linear, file) 
+
+print("RESULTS... BEST ACCURACY: ", bestScoreSoFar, " with a test size of ", bestTestSize)
 
 pickle_in = open("studentModel.pickle", "rb")
 linear = pickle.load(pickle_in)
