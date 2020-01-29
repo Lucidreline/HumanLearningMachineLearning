@@ -6,6 +6,12 @@ import matplotlib.pyplot as pyplot
 from matplotlib import style
 import pickle
 from time import sleep
+from datetime import datetime
+
+def TimeStamp():
+    currentTime = datetime.now()
+    print("Date: " + str(currentTime.month) + "/" + str(currentTime.day) + "/" + str(currentTime.year))
+    print("Time: " + str(currentTime.hour) + ":" + str(currentTime.minute) + ":" + str(currentTime.second) + "\n")
 
 data = pd.read_csv("student-mat.csv", sep=";") #gets the data from the file and seperates the data using semicolons... usually its commas so you have to tell it to use ';'
 
@@ -22,14 +28,14 @@ x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y
 
 bestScoreSoFar = 0
 bestTestSize = 0
-loopLength = 10000000
+loopLength = 2000000
 for j in range(29):
     if j == 0:
         j = 10
     j = j/100
     print(j)
     for i in range(loopLength):
-        sleep(0.1)
+        sleep(0.075)
         # we are going to split these up into 4 different arrays
         x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=j) # test size means 90% of the data will be used to train and 10% will be used to test
 
@@ -38,8 +44,9 @@ for j in range(29):
         linear.fit(x_train, y_train) # finds the best fit line
         accuracyOFModel = linear.score(x_test, y_test)
 
-        if i % 1000000 == 0:
-            print( "\n\nCurrent Accuracy: ",  accuracyOFModel, f'{i:,}', "/", f'{loopLength:,}', " \nwith a test size of " + j )
+        if i % 500 == 0:
+            print( "\n\nCurrent Accuracy: ",  accuracyOFModel, f'{i:,}', "/", f'{loopLength:,}', " \nwith a test size of ", j )
+            TimeStamp()
 
         if accuracyOFModel > bestScoreSoFar:
             bestTestSize = j

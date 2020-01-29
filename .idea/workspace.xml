@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c3916162-7a12-480a-a49f-e12583632a2b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Linear Regression/linearRegression.py" beforeDir="false" afterPath="$PROJECT_DIR$/Linear Regression/linearRegression.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,10 +132,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Regression" />
-      <item itemvalue="Python.KNN" />
-      <item itemvalue="Python.SVM" />
       <item itemvalue="Python.KM" />
+      <item itemvalue="Python.KNN" />
+      <item itemvalue="Python.Regression" />
+      <item itemvalue="Python.SVM" />
     </list>
   </component>
   <component name="ServiceViewManager">
@@ -195,10 +196,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1577778191100" />
-    <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1580103111516">
+    <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1580319396521">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="661" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580103111516" />
+    <state x="661" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580319396521" />
     <state x="1070" y="201" width="606" height="804" key="find.popup" timestamp="1579937529805">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
