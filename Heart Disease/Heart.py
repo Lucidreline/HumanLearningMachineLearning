@@ -35,7 +35,7 @@ def TimeStamp(atributeIndex, loopIndex):
     print("Using: age, sex, and " + atributesToCycleThrough[atributeIndex] + " on loop " + str(loopIndex) + "\n")
 
 
-numOfLoopsPerAttribute = 1000
+numOfLoopsPerAttribute = 100000
 bestAccuracyThusFar = 0
 attributeThatBestAccuracyWasOn = ""
 
@@ -55,7 +55,7 @@ for i in range(len(atributesToCycleThrough)):
 
         model.fit(x_train, y_train)
         currentAccuracy = model.score(x_test, y_test)
-        if j % 1000 == 0:
+        if j % 10000 == 0:
             TimeStamp(i, j)
         if currentAccuracy > bestAccuracyThusFar:
             with open("Heart.pickle", "wb") as file:
