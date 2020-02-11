@@ -2,8 +2,8 @@ import pandas as pd #allows us to read in the data sets
 import numpy as np # allows us to use arrays in python
 import sklearn
 from sklearn import linear_model
-import matplotlib.pyplot as pyplot
-from matplotlib import style
+#import matplotlib.pyplot as pyplot
+#from matplotlib import style
 import pickle
 from time import sleep
 from datetime import datetime
@@ -66,10 +66,10 @@ predictions = linear.predict(x_test)
 for x in range(len(predictions)):
     print("\nData: " , x_test[x] , "\nPrediction: " , predictions[x], "\nActual Answer: " , y_test[x])
 
-attribute = 'G1'
+'''attribute = 'G1'
 style.use("ggplot") #makes our grid look nice
 pyplot.scatter(data[attribute], data[predict]) #gives it x and y values
 pyplot.xlabel(attribute)
 pyplot.ylabel("Final Grade")
 
-pyplot.show()
+pyplot.show()'''

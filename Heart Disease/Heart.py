@@ -14,8 +14,13 @@ Since we will let this train for a few million loops, i want to be able to print
 and i want a time stand on those updates '''
 
 
-data = pandas.read_csv('heart.csv') # reads in the csv file
+dataCSV = pandas.read_csv('heart.csv') # reads in the csv file
+
+atributesToCycleThrough = ["chestPaintype","restingBloodPressure","cholestoral","fbs","restecg","thalach","exang","oldpeak","slope","ca","thal"]
+data = dataCSV[["target", "age", "sex", atributesToCycleThrough[0]]]
 labelToBePredicted = "target"
+
+
 
 x = np.array(data.drop([labelToBePredicted], 1)) # an array of our attributes except what we want to find (labels)
 y = np.array(data[labelToBePredicted]) # an array of only the label we want to find
@@ -23,36 +28,46 @@ y = np.array(data[labelToBePredicted]) # an array of only the label we want to f
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)  # test size means 90% of the data will be used to train and 10% will be used to test
 
 
-def TimeStamp(neighborIndex, loopIndex):
+def TimeStamp(atributeIndex, loopIndex):
     currentTime = datetime.now()
-    print("\nDate: " + str(currentTime.month) + "/" + str(currentTime.day) + "/" + str(currentTime.year))
+    print("\n\nDate: " + str(currentTime.month) + "/" + str(currentTime.day) + "/" + str(currentTime.year))
     print("Time: " + str(currentTime.hour) + ":" + str(currentTime.minute) + ":" + str(currentTime.second))
-    print("On Neighbor " + str(neighborIndex) + " on loop " + str(loopIndex) + "\n")
+    print("Using: age, sex, and " + atributesToCycleThrough[atributeIndex] + " on loop " + str(loopIndex) + "\n")
 
-maxNumOfNeighbors = 22
-numOfLoopsPerNeighbor = 5000000
+
+numOfLoopsPerAttribute = 1000
 bestAccuracyThusFar = 0
-neighborThatBestAccuracyWasOn = 0
+attributeThatBestAccuracyWasOn = ""
 
-for i in range(maxNumOfNeighbors):
-    if i % 2 == 1:
-        for j in range(numOfLoopsPerNeighbor):
-            model = KNeighborsClassifier(n_neighbors=i)
-            model.fit(x_train, y_train)
-            currentAccuracy = model.score(x_test, y_test)
-            if j % 100000 == 0:
-                TimeStamp(i, j)
-            if currentAccuracy > bestAccuracyThusFar:
-                with open("Heart.pickle", "wb") as file:
-                    pickle.dump(model, file)
+for i in range(len(atributesToCycleThrough)):
 
-                bestAccuracyThusFar = currentAccuracy
-                neighborThatBestAccuracyWasOn = i
-                print("\n\n ~ ~ BEST SO FAR ~ ~ ", "\nAccuracy: " + str(bestAccuracyThusFar))
-                print( "Neighbor: " + str(neighborThatBestAccuracyWasOn), "\n ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\n\n")
-            sleep(0.01)
+    print(data)
+    data = dataCSV[["age", "sex", atributesToCycleThrough[i]]]
+    x = np.array(data) # an array of our attributes except what we want to find (labels)
+    
+
+    for j in range(numOfLoopsPerAttribute):
+        model = KNeighborsClassifier(n_neighbors=7)
+
+        
+        x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)  # test size means 90% of the data will be used to train and 10% will be used to test
+
+
+        model.fit(x_train, y_train)
+        currentAccuracy = model.score(x_test, y_test)
+        if j % 1000 == 0:
+            TimeStamp(i, j)
+        if currentAccuracy > bestAccuracyThusFar:
+            with open("Heart.pickle", "wb") as file:
+                pickle.dump(model, file)
+
+            bestAccuracyThusFar = currentAccuracy
+            attributeThatBestAccuracyWasOn = atributesToCycleThrough[i]
+            print("\n\n ~ ~ BEST SO FAR ~ ~ ", "\nAccuracy: " + str(bestAccuracyThusFar))
+            print( "Atributes: age, sex, and " + attributeThatBestAccuracyWasOn, "\n ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\n\n")
+        sleep(0.01)
 print("\n\n === TRAIN RESULTS ===")
-print("Top Accuracy: " + str(bestAccuracyThusFar) + " with " + str(neighborThatBestAccuracyWasOn) + " Neighbors")
+print("Top Accuracy: " + str(bestAccuracyThusFar) + " using age, sex, and " + str(attributeThatBestAccuracyWasOn))
 
 
 pickle_in = open("Heart.pickle", "rb")
