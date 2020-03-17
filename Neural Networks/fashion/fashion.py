@@ -1,6 +1,7 @@
 import tensorflow as tf
 from tensorflow import keras # helps us get data sets
 import numpy as np # allows us to have arrays
+import matplotlib.pyplot as plt
 
 data = keras.datasets.fashion_mnist # loads in dataset
 
@@ -39,8 +40,19 @@ model = keras.Sequential([
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
 # training model
-model.fit(train_images, train_labels, epochs=7)
+model.fit(train_images, train_labels, epochs=5)
 
 # testing the model
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 print('Test Accuracy: ', test_acc)
+
+#Predict labels
+predictions = model.predict(test_images)
+
+plt.figure(figsize=(5,5))
+for i in range(20):
+    plt.grid(False)
+    plt.imshow(test_images[i], cmap=plt.cm.binary)
+    plt.xlabel(class_names[test_labels[i]])
+    plt.title(class_names[np.argmax(predictions[i])])
+    plt.show()
